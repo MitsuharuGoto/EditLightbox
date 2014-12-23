@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>編集機能付きLightbox</title>
+    <style>
+        .container {
+            position: relative;
+            width: 960px;
+            margin: 50px auto;
+        }
+        .editBoxBody {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .editBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10000;
+            margin: auto;
+            padding: 20px;
+            width: 540px;
+            height: 80px;
+            background: #fff;
+        }
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 0 5px;
+            background: #454545;
+            color: #fff;
+            text-decoration: none;
+        }
+        .dummy {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background: #f00;
+        }
+    </style>
+    <script src="js/jquery-1.10.1.js"></script>
+    <script src="js/editLightbox.js"></script>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+                <tr>
+                    <td>株式会社〇〇</td>
+                    <td>愛知県名古屋市</td>
+                    <td>項目1</td>
+                    <td>事業内容１</td>
+                    <td><button type="button" class="edit">編集</button></td>
+                </tr>
+                <tr>
+                    <td>◯×△株式会社</td>
+                    <td>岐阜県岐阜市</td>
+                    <td>項目2</td>
+                    <td>事業内容２</td>
+                    <td><button type="button" class="edit">編集</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- End container -->
+    <div class="editBoxBody">
+        <div class="editBox">
+            <form action="" method="post">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label>会社名 <input type="text" value=""></label></td>
+                            <td><label>住所 <input type="text" value=""></label></td>
+                            <td><label>項目 <input type="text" value=""></label></td>
+                            <td><label>事業内容 <input type="text" value=""></label></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" value="更新">
+            </form>
+            <a href="#" class="close">×</a>
+        </div>
+        <!-- End editBox -->
+    </div>
+    <!-- End editBoxBody -->
+</body>
+</html>
